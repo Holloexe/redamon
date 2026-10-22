@@ -61,20 +61,19 @@
   gap: var(--space-2);
   flex-wrap: nowrap;
   padding: var(--space-3) var(--space-4);
-  /* RedAmon "world" background, matching redamon.org: the dotted world map (red
-     dots on a dark red-to-black base) with a soft crimson glow blooming from the
-     left. Top/bottom fade keeps the dots from touching the header edges. This is
-     a branded strip, so it stays dark in both themes on purpose. */
+  /* Branded "world" strip: the dotted world map (blue dots on a dark blue-to-black
+     base) with a soft blue glow blooming from the left. Top/bottom fade keeps the
+     dots from touching the header edges. Stays dark in both themes on purpose. */
   background:
     /* light top/bottom fade so the dots melt into the edges but stay vivid in the
-       middle band (low veil opacity keeps the red dots opaque). */
-    linear-gradient(to bottom, rgba(4, 2, 2, 0.6) 0%, rgba(4, 2, 2, 0.38) 45%, rgba(4, 2, 2, 0.48) 100%),
-    /* dotted world map (muted dark-red dots) */
+       middle band (low veil opacity keeps the blue dots opaque). */
+    linear-gradient(to bottom, rgba(2, 3, 8, 0.6) 0%, rgba(2, 3, 8, 0.38) 45%, rgba(2, 3, 8, 0.48) 100%),
+    /* dotted world map (muted blue dots) */
     url('/agent-worldmap.svg') 28% 42% / cover no-repeat,
-    /* soft crimson glow blooming from the left */
-    radial-gradient(70% 130% at 14% 45%, rgba(183, 28, 28, 0.28) 0%, transparent 55%),
-    /* dark red to black base */
-    linear-gradient(115deg, #140505 0%, #080202 55%, #030101 100%);
+    /* soft blue glow blooming from the left */
+    radial-gradient(70% 130% at 14% 45%, rgba(59, 130, 246, 0.30) 0%, transparent 55%),
+    /* dark blue to black base */
+    linear-gradient(115deg, #050a16 0%, #03060f 55%, #010207 100%);
   border-bottom: 1px solid var(--border-default);
   flex-shrink: 0;
 }
@@ -111,11 +110,11 @@
 
 .header .headerIcon {
   /* Sits over the brightest part of the left glow, so it needs its own dark
-     plate and a brighter crimson stroke to separate from the red bloom. */
-  background: rgba(8, 3, 3, 0.55);
-  border-color: rgba(255, 120, 120, 0.9);
-  color: #ff6b6b;
-  box-shadow: 0 0 12px rgba(229, 57, 53, 0.35);
+     plate and a brighter blue stroke to separate from the blue bloom. */
+  background: rgba(3, 6, 14, 0.55);
+  border-color: rgba(120, 170, 255, 0.9);
+  color: #78a9ff;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
 }
 
 .header .iconButton,
@@ -143,24 +142,24 @@
   color: #fbbf24;
 }
 
-/* ── Light mode: a red-and-white take on the same world background. White base,
-   red dotted map + soft red glow, and every element re-tuned to dark/red for
+/* ── Light mode: a blue-and-white take on the same world background. White base,
+   blue dotted map + soft blue glow, and every element re-tuned to dark/blue for
    contrast on the light strip. ───────────────────────────────────────────── */
 :global([data-theme="light"]) .header {
   background:
     /* light white veil: fades the dots at the edges but keeps them visible in the
-       middle band so the red map reads clearly on white. */
+       middle band so the blue map reads clearly on white. */
     linear-gradient(to bottom, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.16) 100%),
-    /* red dotted world map for the light background */
+    /* blue dotted world map for the light background */
     url('/agent-worldmap-light.svg') 28% 42% / cover no-repeat,
-    /* soft red glow from the left */
-    radial-gradient(70% 130% at 14% 45%, rgba(229, 57, 53, 0.16) 0%, transparent 55%),
-    /* white to pale-red base */
-    linear-gradient(115deg, #ffffff 0%, #fff4f4 55%, #ffe9e9 100%);
+    /* soft blue glow from the left */
+    radial-gradient(70% 130% at 14% 45%, rgba(59, 130, 246, 0.16) 0%, transparent 55%),
+    /* white to pale-blue base */
+    linear-gradient(115deg, #ffffff 0%, #f4f8ff 55%, #e9f1ff 100%);
 }
 
 :global([data-theme="light"]) .header .title {
-  color: #b71c1c;
+  color: #1d4ed8;
   text-shadow: none;
 }
 
@@ -169,9 +168,9 @@
 }
 
 :global([data-theme="light"]) .header .sessionCode {
-  color: #7f1d1d;
-  background: rgba(255, 245, 245, 0.92);
-  border-color: rgba(183, 28, 28, 0.4);
+  color: #1e3a8a;
+  background: rgba(245, 248, 255, 0.92);
+  border-color: rgba(59, 130, 246, 0.4);
 }
 
 :global([data-theme="light"]) .header .tokenTotal {
@@ -182,23 +181,23 @@
 
 :global([data-theme="light"]) .header .headerIcon {
   background: rgba(255, 255, 255, 0.7);
-  border-color: #d32f2f;
-  color: #d32f2f;
-  box-shadow: 0 0 10px rgba(229, 57, 53, 0.2);
+  border-color: #1d4ed8;
+  color: #1d4ed8;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
 }
 
 :global([data-theme="light"]) .header .iconButton,
 :global([data-theme="light"]) .header .closeButton {
   background: rgba(255, 255, 255, 0.72);
-  color: #4a1414;
-  border: 1px solid rgba(183, 28, 28, 0.22);
+  color: #14213f;
+  border: 1px solid rgba(59, 130, 246, 0.22);
 }
 
 :global([data-theme="light"]) .header .iconButton:hover:not(:disabled),
 :global([data-theme="light"]) .header .closeButton:hover {
   background: #ffffff;
-  color: #b71c1c;
-  border-color: rgba(183, 28, 28, 0.45);
+  color: #1d4ed8;
+  border-color: rgba(59, 130, 246, 0.45);
 }
 
 .headerLeft {
@@ -219,9 +218,9 @@
   height: 32px;
   flex-shrink: 0;
   background: transparent;
-  border: 1px solid #d32f2f; /* RedAmon primary crimson */
+  border: 1px solid #1d4ed8;
   border-radius: var(--radius-lg);
-  color: #d32f2f;
+  color: #1d4ed8;
 }
 
 .headerText {
@@ -973,8 +972,8 @@
 }
 
 .messageAssistant .messageIcon {
-  border-color: #d32f2f; /* RedAmon primary crimson */
-  color: #d32f2f;
+  border-color: var(--accent-secondary);
+  color: var(--accent-secondary);
 }
 
 .messageContent {
@@ -1102,7 +1101,7 @@
 }
 
 .messageAssistant .messageText {
-  background: linear-gradient(135deg, var(--bg-tertiary) 0%, rgba(211, 47, 47, 0.08) 100%);
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, rgba(25, 118, 210, 0.08) 100%);
   color: var(--text-primary);
   border-bottom-left-radius: var(--radius-sm);
   font-size: var(--text-xs);
@@ -1251,7 +1250,7 @@
 
 .inputWrapper:focus-within {
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 2px rgba(229, 57, 53, 0.15);
+  box-shadow: 0 0 0 2px rgba(0, 200, 83, 0.18);
 }
 
 .input {
@@ -1429,10 +1428,10 @@
   display: inline-flex;
   align-items: center;
   padding: 1px 6px;
-  background: rgba(211, 47, 47, 0.12);
-  border: 1px solid rgba(211, 47, 47, 0.3);
+  background: rgba(25, 118, 210, 0.12);
+  border: 1px solid rgba(25, 118, 210, 0.3);
   border-radius: var(--radius-sm);
-  color: #d32f2f;
+  color: #1976d2;
   font-size: 9px;
   font-weight: 600;
   text-transform: uppercase;
@@ -1458,10 +1457,10 @@
   align-items: center;
   gap: 4px;
   padding: 3px 8px;
-  background: rgba(211, 47, 47, 0.1);
-  border: 1px solid rgba(211, 47, 47, 0.25);
+  background: rgba(25, 118, 210, 0.1);
+  border: 1px solid rgba(25, 118, 210, 0.25);
   border-radius: var(--radius-md);
-  color: #d32f2f;
+  color: #1976d2;
   font-size: 10px;
   font-weight: 600;
   cursor: pointer;
@@ -1470,8 +1469,8 @@
 }
 
 .reportDownloadButton:hover {
-  background: rgba(211, 47, 47, 0.2);
-  border-color: rgba(211, 47, 47, 0.5);
+  background: rgba(25, 118, 210, 0.2);
+  border-color: rgba(25, 118, 210, 0.5);
 }
 
 .reportDownloadButton:active {
@@ -1940,7 +1939,7 @@ td:hover .tableCellCopyButton {
 .modificationInput:focus {
   outline: none;
   border-color: var(--accent-primary);
-  box-shadow: 0 0 0 2px rgba(229, 57, 53, 0.15);
+  box-shadow: 0 0 0 2px rgba(0, 200, 83, 0.18);
 }
 
 .modificationInput::placeholder {
@@ -2393,11 +2392,11 @@ td:hover .tableCellCopyButton {
 }
 
 .skillDropdownItemActive {
-  background: rgba(229, 57, 53, 0.12);
+  background: rgba(25, 118, 210, 0.12);
 }
 
 .skillDropdownItemActive:hover {
-  background: rgba(229, 57, 53, 0.18);
+  background: rgba(25, 118, 210, 0.18);
 }
 
 .skillItemName {
@@ -2450,11 +2449,11 @@ td:hover .tableCellCopyButton {
   gap: 6px;
   padding: 3px 8px 3px 6px;
   margin-bottom: 6px;
-  background: rgba(229, 57, 53, 0.1);
-  border: 1px solid rgba(229, 57, 53, 0.35);
+  background: rgba(25, 118, 210, 0.1);
+  border: 1px solid rgba(25, 118, 210, 0.35);
   border-radius: var(--radius-md);
   font-size: 11px;
-  color: #ef5350;
+  color: #1976d2;
   line-height: 1;
   max-width: 100%;
 }
@@ -2490,15 +2489,15 @@ td:hover .tableCellCopyButton {
   background: transparent;
   border: none;
   border-radius: 3px;
-  color: rgba(229, 57, 53, 0.6);
+  color: rgba(25, 118, 210, 0.6);
   cursor: pointer;
   transition: var(--transition-all);
   flex-shrink: 0;
 }
 
 .activeSkillRemove:hover {
-  background: rgba(229, 57, 53, 0.2);
-  color: #ef5350;
+  background: rgba(25, 118, 210, 0.2);
+  color: #1976d2;
 }
 
 .skillDropdownActions {

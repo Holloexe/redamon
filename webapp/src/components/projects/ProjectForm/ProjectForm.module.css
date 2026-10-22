@@ -69,16 +69,17 @@
   outline-color: var(--color-green-700);
 }
 
-/* White on crimson-500 is 4.2:1; crimson-600 clears AA. The border matches the
-   fill so the primary is the same height as its bordered neighbours. */
+/* brand-600 deepens the fill against a white page; the primary carries dark ink
+   (--text-on-brand), not white. The border matches the fill so the primary is
+   the same height as its bordered neighbours. */
 :global([data-theme="light"]) .header :global(.primaryButton) {
-  background: var(--color-crimson-600);
-  border: 1px solid var(--color-crimson-600);
+  background: var(--color-brand-600);
+  border: 1px solid var(--color-brand-600);
 }
 
 :global([data-theme="light"]) .header :global(.primaryButton):hover:not(:disabled) {
-  background: var(--color-crimson-700);
-  border-color: var(--color-crimson-700);
+  background: var(--color-brand-700);
+  border-color: var(--color-brand-700);
   filter: none;
 }
 

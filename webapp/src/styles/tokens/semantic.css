@@ -25,7 +25,11 @@
   --text-secondary: var(--color-gray-400);  /* Secondary/muted text */
   --text-tertiary: var(--color-gray-500);   /* Disabled, placeholders */
   --text-inverse: var(--color-gray-950);    /* Text on light backgrounds */
-  --text-on-accent: var(--color-white);     /* Text on colored backgrounds */
+  --text-on-accent: var(--color-white);     /* Text on darker colored fills (blue, red) */
+  /* The brand green is light enough that white text on it is ~2.2:1 (fails AA),
+     unlike the dark crimson it replaced. Text sitting ON a brand-green fill uses
+     this dark ink instead (~8:1). Only for green fills — blue/red keep white. */
+  --text-on-brand: var(--color-gray-950);
 
   /* ═══════════════════════════════════════════════════════════════════════════
      BORDERS
@@ -36,12 +40,12 @@
   --border-focus: var(--color-blue-500);    /* Focus rings */
 
   /* ═══════════════════════════════════════════════════════════════════════════
-     ACCENT / BRAND (Crimson Red - Primary, Blue - Secondary)
+     ACCENT / BRAND (Green - Primary, Blue - Secondary)
      ═══════════════════════════════════════════════════════════════════════════ */
-  --accent-primary: var(--color-crimson-500);
-  --accent-primary-hover: var(--color-crimson-600);
-  --accent-primary-active: var(--color-crimson-700);
-  --accent-primary-subtle: var(--color-crimson-900);
+  --accent-primary: var(--color-brand-500);
+  --accent-primary-hover: var(--color-brand-600);
+  --accent-primary-active: var(--color-brand-700);
+  --accent-primary-subtle: var(--color-brand-900);
 
   --accent-secondary: var(--color-blue-500);
   --accent-secondary-hover: var(--color-blue-600);

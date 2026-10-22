@@ -22,18 +22,21 @@
   --color-gray-950: #0a0a0a;
 
   /* ═══════════════════════════════════════════════════════════════════════════
-     CRIMSON (Primary / Brand - RedAmon)
+     BRAND (Primary accent - green)
+     A vivid green, deliberately cooler and more saturated than the SUCCESS
+     green scale below (500 #00c853 vs success 500 #22c55e) so the brand accent
+     never reads as "success". See docs/adr/0001.
      ═══════════════════════════════════════════════════════════════════════════ */
-  --color-crimson-50: #fef2f2;
-  --color-crimson-100: #fee2e2;
-  --color-crimson-200: #ffcdd2;
-  --color-crimson-300: #ef9a9a;
-  --color-crimson-400: #ef5350;
-  --color-crimson-500: #e53935;
-  --color-crimson-600: #d32f2f;
-  --color-crimson-700: #c62828;
-  --color-crimson-800: #b71c1c;
-  --color-crimson-900: #7f1d1d;
+  --color-brand-50: #e6faef;
+  --color-brand-100: #bff3d4;
+  --color-brand-200: #86e9ae;
+  --color-brand-300: #3edd83;
+  --color-brand-400: #0fd068;
+  --color-brand-500: #00c853;
+  --color-brand-600: #00a847;
+  --color-brand-700: #008a3a;
+  --color-brand-800: #006e2f;
+  --color-brand-900: #054d24;
 
   /* ═══════════════════════════════════════════════════════════════════════════
      BLUE (Secondary / Info)

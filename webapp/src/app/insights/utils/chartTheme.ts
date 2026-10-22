@@ -7,7 +7,7 @@ function getCssVar(name: string): string {
 
 export function getSeverityPalette() {
   return {
-    critical: getCssVar('--color-crimson-500') || '#e53935',
+    critical: getCssVar('--color-red-500') || '#ef4444',
     high: getCssVar('--color-orange-500') || '#f97316',
     medium: getCssVar('--color-amber-500') || '#f59e0b',
     low: getCssVar('--color-blue-500') || '#3b82f6',
@@ -44,7 +44,7 @@ export function getNodeTypePalette() {
 export function getChartPalette(): string[] {
   return [
     getCssVar('--color-blue-500') || '#3b82f6',
-    getCssVar('--color-crimson-500') || '#e53935',
+    getCssVar('--color-red-500') || '#ef4444',
     getCssVar('--color-green-500') || '#22c55e',
     getCssVar('--color-amber-500') || '#f59e0b',
     getCssVar('--color-purple-500') || '#a855f7',
